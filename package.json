@@ -21,14 +21,18 @@
     "format:check": "prettier . --check",
     "lint:fix": "eslint .",
     "lint:check": "eslint . --fix",
+    "lint-staged": "lint-staged",
     "prepare": "husky"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
     "undici-types": "^7.16.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
-    "@types/node": "^25.0.7",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.8",
     "@typescript-eslint/eslint-plugin": "^8.53.0",
     "@typescript-eslint/parser": "^8.53.0",
     "eslint": "^9.39.2",
@@ -43,8 +47,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      " npm run format:fix ",
-      "npm run int:fix"
+      "npm run format:fix",
+      "npm run lint:fix"
     ]
   }
 }
