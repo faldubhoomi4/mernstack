@@ -1,2 +1,9 @@
-const config = require("./config");
-console.log(`Server is running on port ${config.PORT}`);
+interface IConfig {  
+    port: number;
+}
+
+const Config: IConfig = {
+    port: process.env.PORT ? parseInt(process.env.PORT) : 3000,
+};
+
+export { Config };

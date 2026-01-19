@@ -7,15 +7,10 @@ export default defineConfig(
     tseslint.configs.recommended,
     {
         ignores: ["dist", "node_modules"],
-        languageOptions: {
-            ecmaVersion: "latest",
-            sourceType: "module",
-            parserOptions: {
-                project: ["./tsconfig.json"],
-            },
+        
         },
-        rules: {
-            // Add custom rules here
-        },
-    },
+        // rules  {
+        //     // Add custom rules here
+        // },
+    
 );

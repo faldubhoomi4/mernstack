@@ -25,6 +25,7 @@
         "prepare": "husky"
     },
     "dependencies": {
+        "@dotenvx/dotenvx": "^1.51.4",
         "dotenv": "^17.2.3",
         "express": "^5.2.1",
         "undici-types": "^7.16.0"
