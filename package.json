@@ -15,7 +15,7 @@
     "type": "commonjs",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "dev": "nodemon src/server.ts",
         "format:fix": "prettier . --write",
         "format:check": "prettier . --check",
@@ -32,9 +32,11 @@
         "winston": "^3.19.0"
     },
     "devDependencies": {
+        "@babel/preset-typescript": "^7.28.5",
         "@eslint/js": "^9.39.2",
         "@types/express": "^5.0.6",
         "@types/http-errors": "^2.0.5",
+        "@types/jest": "^30.0.0",
         "@types/node": "^25.0.8",
         "@types/winston": "^2.4.4",
         "@typescript-eslint/eslint-plugin": "^8.53.0",
@@ -43,6 +45,7 @@
         "eslint-plugin-react": "^7.37.5",
         "globals": "^17.0.0",
         "husky": "^9.1.7",
+        "jest": "^26.5.3",
         "jiti": "^2.6.1",
         "lint-staged": "^16.2.7",
         "nodemon": "^3.1.11",
