@@ -1,7 +1,5 @@
-import { config } from "dotenv";
 import winston from "winston";
-import { Config } from ".";
-
+import { Config } from "./index";
 
 const logger = winston.createLogger({
     level: "info",
@@ -10,9 +8,12 @@ const logger = winston.createLogger({
         new winston.transports.File({
             level: "info",
             filename: "app.log",
-            format: winston.format.combine(winston.format.timestamp(), winston.format.json()),
+            format: winston.format.combine(
+                winston.format.timestamp(),
+                winston.format.json()
+            ),
             dirname: ".logs",
-            silent: false,
+             silent: Config.NODE_ENV === "TEST",
            
         }),
          new winston.transports.File({
@@ -26,8 +27,7 @@ const logger = winston.createLogger({
         new winston.transports.Console({ 
             level: "info",
             format: winston.format.combine(winston.format.timestamp(), winston.format.json()),
-            // silent: Config.NODE_ENV === "test",
-            silent: false,
+            silent: Config.NODE_ENV === "TEST",
         })
     ],                                                                                                                                                                                                      
 

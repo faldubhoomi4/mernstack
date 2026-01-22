@@ -4,13 +4,26 @@ import tseslint from "typescript-eslint";
 
 export default defineConfig(
     eslint.configs.recommended,
-    tseslint.configs.recommended,
+ 
+     tseslint.configs.recommendedTypeChecked,
+     {
+         ignores: ["dist", "node_modules", "eslint.config.mjs", "jest.config.js"],
+     },
     {
-        ignores: ["dist", "node_modules"],
-        
+      languageOptions: {
+        parserOptions: {
+          projectService: {
+            allowDefaultProject: ["eslint.config.mjs", "jest.config.js"],
+          },
         },
-        // rules  {
-        //     // Add custom rules here
-        // },
-    
+      },
+      rules: {
+        "no-console": "off",
+      },
+    },
 );
+    
+
+       
+        
+   

@@ -1,8 +1,7 @@
-
-import { describe } from "node:test";
-import { request } from "https";
+/* eslint-disable @typescript-eslint/no-floating-promises, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access */
+import { describe, it, expect } from "@jest/globals";
+import request from "supertest";
 import app from "../../src/app";
-import e from "express";
 describe("POST/auth/register", () => {
     describe("given all fields", ()=>{
         it("should return 201 status code", async ()=>{
@@ -12,7 +11,7 @@ describe("POST/auth/register", () => {
                firstname :"bhoomi",
                lastname: "faldu",
                email:"faldubhoomi4@gmailk.com",
-               password:"bhoomi678",}
+               password:"bhoomi678",
             }
             // Act
             const response = await request(app)
@@ -20,10 +19,11 @@ describe("POST/auth/register", () => {
  
             // Assert 
             expect(response.statusCode).toBe(201);
-    } );
+        } );
+    });
     describe("filed are missing", ()=>{});  
 });
-     
+
 
 
 
