@@ -1,20 +1,19 @@
 import Express, { NextFunction, Request, Response } from "express";
 import logger from "./config/logger";
-import createHttpError, { HttpError } from "http-errors";
-
-
+import  { HttpError } from "http-errors";
+import authRouther from "./routes/auth";
 
 const app = Express();
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-app.get("/",  (req, res, next) => {
+
+app.get("/",  (req, res,) => {
   res.status(200).send("welcome to the server");
 })
 
 // Auth routes
-app.post("/auth/register", (req, res) => {
-  // TODO: Implement user registration
-  res.status(201).json({ message: "User registered successfully" });
-})
+ app.use("/auth", authRouther);
+  
 
 // global error handeler.
 
