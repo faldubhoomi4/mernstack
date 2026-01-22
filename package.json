@@ -29,6 +29,7 @@
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "http-errors": "^2.0.1",
+    "pg": "^8.17.2",
     "undici-types": "^7.16.0",
     "winston": "^3.19.0"
   },

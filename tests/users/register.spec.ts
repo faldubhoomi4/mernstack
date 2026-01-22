@@ -34,7 +34,24 @@ describe("POST/auth/register", () => {
  
             // Assert  applicaton/json
             expect((response.headers as Record <string, string>)["content-type"]).toEqual(expect.stringContaining("json"));
-            });
+        });
+        it("should persist the user in database", async()=>{
+           
+             // Arrange
+            const userData={
+               firstname :"bhoomi",     
+               lastname: "faldu",   
+               email:"faldubhoomi4@gmailk.com",
+               password:"bhoomi678",
+            }
+            // Act
+            const response = await request(app)
+            .post("/auth/register").send(userData);  
+ 
+            // Assert  applicaton/json
+            expect((response.headers as Record <string, string>)["content-type"]).toEqual(expect.stringContaining("json"));
+        });
+
 
  
     describe("filed are missing", ()=>{
